@@ -13,14 +13,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/devices")
-public class DeviceController {
+public class AdminController {
 
-    private final DeviceService deviceService;
+     
 
     @Autowired
-    public DeviceController(DeviceService deviceService) {
-        this.deviceService = deviceService;
-    }
+    DeviceService deviceService;
 
     @PostMapping
     public ResponseEntity<DeviceDTO> addDevice(@RequestBody DeviceDTO deviceDTO) {
@@ -28,14 +26,13 @@ public class DeviceController {
         return new ResponseEntity<>(addedDevice, HttpStatus.CREATED);
     }
 
-    @PutMapping("/{deviceId}")
+    @PostMapping("/update/{deviceId}")
     public ResponseEntity<DeviceDTO> updateDevice(@PathVariable Integer deviceId, @RequestBody DeviceDTO deviceDTO) {
-        deviceDTO.setDeviceId(deviceId);
+        deviceDTO.setDeviceId(deviceId); // Set the deviceId from the path variable
         DeviceDTO updatedDevice = deviceService.updateDevice(deviceDTO);
         return new ResponseEntity<>(updatedDevice, HttpStatus.OK);
     }
-
-    @GetMapping("/{deviceId}")
+    @GetMapping("/getdevice/{deviceId}")
     public ResponseEntity<DeviceDTO> getDeviceById(@PathVariable Integer deviceId) {
         DeviceDTO device = deviceService.getDeviceById(deviceId);
         if (device != null) {
@@ -51,8 +48,8 @@ public class DeviceController {
         return new ResponseEntity<>(devices, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{deviceId}")
-    public ResponseEntity<Void> deleteDevice(@PathVariable Integer deviceId) {
+    @DeleteMapping("/delete/{deviceId}")
+    public ResponseEntity<Void> deleteDevice(@RequestParam Integer deviceId) {
         deviceService.deleteDevice(deviceId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
