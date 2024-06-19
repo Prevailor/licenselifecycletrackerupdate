@@ -12,7 +12,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class LogFaultRequestDTO {
-    private Integer deviceId;
+    private String deviceName;
     private String description;
     private String date;
     private String category;

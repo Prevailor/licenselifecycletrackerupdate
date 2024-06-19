@@ -16,6 +16,8 @@ public interface LifecycleEventRepository extends CrudRepository<LifecycleEvent,
 	public List<LifecycleEvent> findByEventType(String eventType);
 	public List<LifecycleEvent> findByEventDate(LocalDate eventDate);
 	public List<LifecycleEvent> findByDescription(String description);
+
+//	public Optional<LifecycleEvent> findByRelatedIdAndEventType(Integer deviceId, String eventType);
 	
 
 	

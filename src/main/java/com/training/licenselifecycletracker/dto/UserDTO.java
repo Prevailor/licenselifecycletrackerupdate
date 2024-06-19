@@ -16,7 +16,7 @@ public class UserDTO {
     private Integer userId;
 //    private String username;
 //    private String email;
-//    private RoleDTO role; // Representing RoleDTO instead of Role entity
+//    private RoleDTO role; 
 //    private List<DeviceDTO> devices;
 
 }

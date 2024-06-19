@@ -12,10 +12,11 @@ import lombok.ToString;
 @Setter
 @ToString
 public class UpdateFaultLogRequestDTO {
-	private Integer deviceId;
+	private String deviceName;
     private String repairDetails;
     private String category;
     private String eventType;
+    
  
 }
  

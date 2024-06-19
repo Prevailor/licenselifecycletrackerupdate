@@ -18,6 +18,8 @@ public interface DeviceRepository extends CrudRepository<Device, Integer> {
 	public List<Device> findByExpirationDate(LocalDate expirationDate);
 	public List<Device> findByEndOfSupportDate(LocalDate endOfSupportDate);
 	
+	List<Device> findByUserUserId(Integer userId);
+	
 	
 
 }

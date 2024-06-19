@@ -18,6 +18,8 @@ public interface SoftwareRepository extends CrudRepository<Software, Integer> {
 	public List<Software> findBySupportEndDate(LocalDate supportEndDate);
 	public List<Software> findByExpirationDateBefore(LocalDate date);
 	
+	public List<Software> findByDeviceDeviceName(String deviceName);
+	
 	
 	
 }

@@ -2,7 +2,9 @@ package com.training.licenselifecycletracker.service;
 
 import com.training.licenselifecycletracker.dto.DeviceDTO;
 import com.training.licenselifecycletracker.dto.LifecycleEventDTO;
+import com.training.licenselifecycletracker.dto.LogFaultRequestDTO;
 import com.training.licenselifecycletracker.dto.SoftwareDTO;
+import com.training.licenselifecycletracker.dto.UpdateFaultLogRequestDTO;
 
 import java.util.List;
 
@@ -21,4 +23,27 @@ public interface DeviceService {
     DeviceDTO addSoftwareToDevice(Integer deviceId, SoftwareDTO softwareDTO);
 
     DeviceDTO addLifecycleEventToDevice(Integer deviceId, LifecycleEventDTO lifecycleEventDTO);
+
+    
+    // user
+    
+	List<DeviceDTO> getDevicesByUserId(Integer userId);
+	
+	List<SoftwareDTO> getSoftwareByDeviceName(String deviceName);
+
+	
+	// techsupport
+	
+	String logFault(LogFaultRequestDTO logFaultRequest);
+
+    String updateFaultLog(UpdateFaultLogRequestDTO updateFaultLogRequest);
+
+    List<SoftwareDTO> viewEndOfSupportDates();
+    
+    // manager
+    
+    List<LifecycleEventDTO> getAllLifecycleEvents();
+	
+	
+
 }
