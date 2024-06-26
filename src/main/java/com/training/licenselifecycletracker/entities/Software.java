@@ -26,6 +26,9 @@ public class Software {
 
     @Column(name = "software_name")
     private String softwareName;
+    
+    @Column(name = "version")
+    private String version;
 
     @Column(name = "license_key")
     private String licenseKey;
@@ -41,6 +44,9 @@ public class Software {
 
     @Column(name = "status")
     private String status;
+    
+    @Column(name = "date_of_last_renewal")
+    private LocalDate dateOfLastRenewal;
 
     @ManyToOne
     @JoinColumn(name = "device_id")

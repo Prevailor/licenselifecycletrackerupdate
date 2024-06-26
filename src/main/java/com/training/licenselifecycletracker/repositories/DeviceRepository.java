@@ -15,7 +15,7 @@ public interface DeviceRepository extends CrudRepository<Device, Integer> {
 	public List<Device> findByStatus(String status);
 	public List<Device> findByDeviceType(String deviceType);
 	public List<Device> findByPurchaseDate(LocalDate purchaseDate);
-	public List<Device> findByExpirationDate(LocalDate expirationDate);
+	//public List<Device> findByExpirationDate(LocalDate expirationDate);
 	public List<Device> findByEndOfSupportDate(LocalDate endOfSupportDate);
 	
 	List<Device> findByUserUserId(Integer userId);

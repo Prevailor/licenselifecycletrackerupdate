@@ -48,14 +48,17 @@ public class Device {
     @Column(name = "purchase_date")
     private LocalDate purchaseDate;
 
-    @Column(name = "expiration_date")
-    private LocalDate expirationDate;
+    @Column(name = "end_of_life")
+    private LocalDate endOfLife;
 
     @Column(name = "support_end_date")
     private LocalDate endOfSupportDate;
 
     @Column(name = "status")
     private String status;
+    
+    @Column(name = "date_of_last_replacement")
+    private LocalDate dateOfLastReplacement;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")

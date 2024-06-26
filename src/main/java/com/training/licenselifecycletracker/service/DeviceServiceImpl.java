@@ -271,23 +271,6 @@ public class DeviceServiceImpl implements DeviceService {
         }
     }
 
-    @Override
-    @Transactional(readOnly = true)
-    public List<DeviceDTO> getDevicesByUserId(Integer userId) {
-        List<Device> devices = deviceRepository.findByUserUserId(userId);
-        return devices.stream()
-                .map(device -> modelMapper.map(device, DeviceDTO.class))
-                .collect(Collectors.toList());
-    }
-    
-    @Override
-    @Transactional(readOnly = true)
-    public List<SoftwareDTO> getSoftwareByDeviceName(String deviceName) {
-        List<Software> softwareList = softwareRepository.findByDeviceDeviceName(deviceName);
-        return softwareList.stream()
-                .map(software -> modelMapper.map(software, SoftwareDTO.class))
-                .collect(Collectors.toList());
-    }
     
     
     // tech support

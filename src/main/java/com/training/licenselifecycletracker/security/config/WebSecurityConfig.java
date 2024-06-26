@@ -63,7 +63,7 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 	//http.cors(AbstractHttpConfigurer :: disable).
 	http.csrf(AbstractHttpConfigurer::disable)
 			.authorizeHttpRequests(req -> req.requestMatchers(PUBLIC_REQUEST_MATCHERS).permitAll()
-					.requestMatchers("/api/devices/**").permitAll()
+					.requestMatchers("/api/devices/**").hasRole("ADMIN")
 					.requestMatchers("/api/lifecycle-events/**").hasRole("ADMIN")
 					.requestMatchers("/api/software/**").hasRole("ADMIN")
 					.requestMatchers("/api/user/**").permitAll()

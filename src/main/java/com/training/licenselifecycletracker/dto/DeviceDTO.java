@@ -20,9 +20,10 @@ public class DeviceDTO {
     private String deviceName;
     private String deviceType;
     private LocalDate purchaseDate;
-    private LocalDate expirationDate;
+    private LocalDate endOfLife;
     private LocalDate endOfSupportDate;
     private String status;
+    private LocalDate dateOfLastReplacement;
     private UserDTO user; // Representing UserDTO instead of User entity
     private List<SoftwareDTO> softwareList;
     private LifecycleEventDTO lifecycleEvent;

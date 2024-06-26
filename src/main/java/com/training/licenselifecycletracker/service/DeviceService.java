@@ -25,11 +25,7 @@ public interface DeviceService {
     DeviceDTO addLifecycleEventToDevice(Integer deviceId, LifecycleEventDTO lifecycleEventDTO);
 
     
-    // user
-    
-	List<DeviceDTO> getDevicesByUserId(Integer userId);
-	
-	List<SoftwareDTO> getSoftwareByDeviceName(String deviceName);
+   
 
 	
 	// techsupport
